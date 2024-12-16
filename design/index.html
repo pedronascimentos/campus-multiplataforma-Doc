@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="../casos_uso/">
+      
+      
+        <link rel="next" href="../arquitetura/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -16,7 +20,7 @@
     
     
       
-        <title>Produto - Campus Multiplataforma</title>
+        <title>Documento de Arquitetura - Campus Multiplataforma</title>
       
     
     
@@ -65,6 +69,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#documento-de-arquitetura" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -94,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Produto
+              Documento de Arquitetura
             
           </span>
         </div>
@@ -201,11 +210,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../design/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
           
   
     
@@ -546,8 +557,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -560,17 +573,20 @@
     
     
       
+        
+        
+      
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -581,7 +597,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Design do Sistema
@@ -592,10 +608,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../design/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Documento de Arquitetura
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -604,6 +640,143 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#diagrama-geral-da-arquitetura" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagrama Geral da Arquitetura
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Diagrama Geral da Arquitetura">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#componentes-principais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Componentes Principais:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#descricao-detalhada-dos-componentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Descrição Detalhada dos Componentes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Descrição Detalhada dos Componentes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#front-end-mobile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Front-End Mobile
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backend-serverless-firebase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Backend Serverless (Firebase)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integracao-com-apis-externas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integração com APIs Externas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aplicacao-do-formato-newsml" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aplicação do Formato NewsML
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Aplicação do Formato NewsML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-que-e-newsml" class="md-nav__link">
+    <span class="md-ellipsis">
+      O que é NewsML?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uso-do-newsml-no-projeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uso do NewsML no Projeto
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estrategias-de-monitoramento-e-manutencao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estratégias de Monitoramento e Manutenção
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusão
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1265,6 +1438,133 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#diagrama-geral-da-arquitetura" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diagrama Geral da Arquitetura
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Diagrama Geral da Arquitetura">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#componentes-principais" class="md-nav__link">
+    <span class="md-ellipsis">
+      Componentes Principais:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#descricao-detalhada-dos-componentes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Descrição Detalhada dos Componentes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Descrição Detalhada dos Componentes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#front-end-mobile" class="md-nav__link">
+    <span class="md-ellipsis">
+      Front-End Mobile
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backend-serverless-firebase" class="md-nav__link">
+    <span class="md-ellipsis">
+      Backend Serverless (Firebase)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integracao-com-apis-externas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integração com APIs Externas
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aplicacao-do-formato-newsml" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aplicação do Formato NewsML
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Aplicação do Formato NewsML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#o-que-e-newsml" class="md-nav__link">
+    <span class="md-ellipsis">
+      O que é NewsML?
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uso-do-newsml-no-projeto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Uso do NewsML no Projeto
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estrategias-de-monitoramento-e-manutencao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estratégias de Monitoramento e Manutenção
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusão
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1279,9 +1579,168 @@
                   
 
 
-  <h1>Produto</h1>
+<h1 id="documento-de-arquitetura">Documento de Arquitetura<a class="headerlink" href="#documento-de-arquitetura" title="Permanent link">&para;</a></h1>
+<p>A arquitetura do sistema <strong>Campus Multiplataforma</strong> foi projetada para suportar um aplicativo de jornalismo multimídia desenvolvido para o <strong>Laboratório de Jornalismo do Departamento de Comunicação da Universidade de Brasília</strong>. Seu objetivo central é <strong>unificar e centralizar conteúdos de várias plataformas</strong> (LinkedIn, Instagram, Twitter, TikTok, YouTube) em um único aplicativo, além de permitir a publicação de notícias próprias no formato <strong>NewsML</strong>.  </p>
+<p>O sistema utiliza <strong>React Native com Expo</strong> para o desenvolvimento do front-end mobile e <strong>Firebase</strong> como principal provedor de serviços em nuvem, como autenticação, armazenamento e banco de dados. Outras APIs externas são integradas para coletar e exibir conteúdo multimídia, como <strong>YouTube Data API v3</strong>, <strong>Instagram Graph API</strong>, <strong>TikTok API</strong>, <strong>Twitter API</strong> e <strong>Imgur API</strong>.</p>
+<p>A arquitetura foi projetada com os princípios de <strong>simplicidade, modularidade e escalabilidade</strong>, aproveitando o paradigma <strong>serverless</strong> com Firebase para reduzir a complexidade de gerenciamento de infraestrutura.  </p>
+<hr />
+<h2 id="diagrama-geral-da-arquitetura"><strong>Diagrama Geral da Arquitetura</strong><a class="headerlink" href="#diagrama-geral-da-arquitetura" title="Permanent link">&para;</a></h2>
+<p>O diagrama a seguir representa a arquitetura proposta para o sistema <strong>Campus Multiplataforma</strong>:  </p>
+<iframe width="800" height="600" src="https://www.figma.com/embed?embed_host=desktop&url=https://www.figma.com/board/OZzmToY6vFm6u1y9C07HwK/Arquitetura?node-id=0-1&t=EYZIvvMhPiGaU5qh-1" allowfullscreen></iframe>
 
+<h3 id="componentes-principais"><strong>Componentes Principais:</strong><a class="headerlink" href="#componentes-principais" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Front-End Mobile:</strong>  </li>
+<li>Desenvolvido com <strong>React Native Expo</strong>.  </li>
+<li>Funcionalidade de interface do usuário.  </li>
+<li>
+<p>Comunicação direta com Firebase e APIs externas.  </p>
+</li>
+<li>
+<p><strong>Backend Serverless (Firebase):</strong>  </p>
+</li>
+<li>Autenticação via <strong>Firebase Authentication</strong>.  </li>
+<li>Armazenamento de notícias e conteúdos no formato <strong>NewsML</strong> no <strong>Firestore Database</strong>.  </li>
+<li>
+<p>Gerenciamento de arquivos (imagens) no <strong>Firebase Storage</strong>.  </p>
+</li>
+<li>
+<p><strong>Integração de APIs Externas:</strong>  </p>
+</li>
+<li><strong>YouTube Data API v3</strong>: Hospedagem e recuperação de vídeos de notícias.  </li>
+<li><strong>Instagram Graph API</strong>: Incorporação de postagens (imagens e vídeos curtos).  </li>
+<li><strong>TikTok API</strong>: Incorporação de vídeos curtos.  </li>
+<li><strong>Twitter API</strong>: Incorporação de tweets (imagens, vídeos e textos).  </li>
+<li>
+<p><strong>Imgur API</strong>: Hospedagem e recuperação de imagens externas.  </p>
+</li>
+<li>
+<p><strong>Formato NewsML:</strong>  </p>
+</li>
+<li>Todas as notícias, sejam originadas no app ou coletadas via APIs externas, serão convertidas e armazenadas no formato <strong>NewsML</strong>.  </li>
+</ol>
+<hr />
+<h2 id="descricao-detalhada-dos-componentes"><strong>Descrição Detalhada dos Componentes</strong><a class="headerlink" href="#descricao-detalhada-dos-componentes" title="Permanent link">&para;</a></h2>
+<h3 id="front-end-mobile"><strong>Front-End Mobile</strong><a class="headerlink" href="#front-end-mobile" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Tecnologia:</strong> React Native com Expo e TypeScript.  </li>
+<li><strong>Função Principal:</strong> Interface do usuário para consumir conteúdos e interagir com o sistema.  </li>
+<li><strong>Detalhes Técnicos:</strong>  </li>
+<li>Comunicação com Firebase para acessar e armazenar dados.  </li>
+<li>Incorporação de conteúdos de APIs externas (YouTube, Instagram, TikTok, Twitter) com integração direta via requisições HTTP.  </li>
+<li>Apresentação dos dados formatados em <strong>NewsML</strong> ao usuário de forma amigável.  </li>
+<li>Integração com o Firebase Authentication para gerenciar usuários e permissões.</li>
+</ul>
+<hr />
+<h3 id="backend-serverless-firebase"><strong>Backend Serverless (Firebase)</strong><a class="headerlink" href="#backend-serverless-firebase" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Tecnologia:</strong> Firebase (Firestore, Storage, Authentication).  </li>
+<li><strong>Função Principal:</strong> Fornecer uma infraestrutura escalável e sem servidor para gerenciar dados e usuários.  </li>
+<li><strong>Detalhes Técnicos:</strong>  </li>
+<li><strong>Firebase Authentication</strong>: Autenticação de usuários para acesso ao app.  </li>
+<li><strong>Cloud Firestore</strong>: Armazenamento dos dados das notícias em formato <strong>NewsML</strong>, facilitando consultas e atualizações.  </li>
+<li><strong>Firebase Storage</strong>: Armazenamento de imagens internas do sistema.  </li>
+</ul>
+<hr />
+<h3 id="integracao-com-apis-externas"><strong>Integração com APIs Externas</strong><a class="headerlink" href="#integracao-com-apis-externas" title="Permanent link">&para;</a></h3>
+<p>O sistema incorpora conteúdos externos usando as seguintes APIs:  </p>
+<ul>
+<li><strong>YouTube Data API v3:</strong>  </li>
+<li>Função: Recuperar vídeos hospedados no YouTube e integrá-los ao aplicativo.  </li>
+<li>
+<p>Exemplo: Vídeos de notícias produzidos pela equipe do laboratório.  </p>
+</li>
+<li>
+<p><strong>Instagram Graph API:</strong>  </p>
+</li>
+<li>Função: Incorporar postagens de imagens e vídeos curtos diretamente no app.  </li>
+<li>
+<p>Exemplo: Fotos ou vídeos de notícias compartilhados no Instagram.  </p>
+</li>
+<li>
+<p><strong>TikTok API:</strong>  </p>
+</li>
+<li>Função: Incorporação de vídeos curtos diretamente no app.  </li>
+<li>
+<p>Exemplo: Notícias ou conteúdos de entretenimento produzidos no TikTok.  </p>
+</li>
+<li>
+<p><strong>Twitter API:</strong>  </p>
+</li>
+<li>Função: Recuperar tweets, incluindo textos, imagens e vídeos.  </li>
+<li>
+<p>Exemplo: Notícias relevantes compartilhadas no Twitter com formato multimídia.  </p>
+</li>
+<li>
+<p><strong>Imgur API:</strong>  </p>
+</li>
+<li>Função: Hospedagem de imagens de forma eficiente e externa.  </li>
+<li>Exemplo: Imagens utilizadas para compor notícias publicadas pelo laboratório.  </li>
+</ul>
+<p>Cada API será acessada via requisições HTTP, e os dados serão processados e armazenados no formato <strong>NewsML</strong> antes de serem apresentados no aplicativo.</p>
+<hr />
+<h2 id="aplicacao-do-formato-newsml"><strong>Aplicação do Formato NewsML</strong><a class="headerlink" href="#aplicacao-do-formato-newsml" title="Permanent link">&para;</a></h2>
+<h3 id="o-que-e-newsml"><strong>O que é NewsML?</strong><a class="headerlink" href="#o-que-e-newsml" title="Permanent link">&para;</a></h3>
+<p>O <strong>NewsML</strong> (News Markup Language) é um padrão baseado em XML desenvolvido para representar notícias em formatos estruturados e multimídia. Ele foi projetado para possibilitar o <strong>intercâmbio padronizado</strong> de informações jornalísticas entre sistemas e plataformas.  </p>
+<p><strong>Características Principais:</strong><br />
+- Suporte a textos, imagens, vídeos e metadados.<br />
+- Compatibilidade com outros formatos como IPTC e XML.<br />
+- Estrutura organizada e escalável para conteúdo jornalístico.</p>
+<p>Para entender a fundo o padrão NewsML, utilize o artigo “Produção de Notícias Multimídia para Diferentes Plataformas Utilizando o Padrão NewsML” (<a href="../images/Producao_de_Noticias_Multimidia_para_Dif.pdf">disponível no ./images/Producao_de_Noticias_Multimidia_para_Dif.pdf</a>).</p>
+<p><strong>Referência ABNT:</strong><br />
+GOMES, Rafael et al. <em>Produção de notícias multimídia para diferentes plataformas utilizando o padrão NewsML.</em> In: Anais do Congresso Brasileiro de Jornalismo Digital. São Paulo: ABCD Editora, 2023. Disponível em: ./images/Producao_de_Noticias_Multimidia_para_Dif.pdf.</p>
+<h3 id="uso-do-newsml-no-projeto"><strong>Uso do NewsML no Projeto</strong><a class="headerlink" href="#uso-do-newsml-no-projeto" title="Permanent link">&para;</a></h3>
+<p>Todas as notícias, sejam elas produzidas internamente ou coletadas de plataformas externas (YouTube, Instagram, Twitter, TikTok), serão formatadas no padrão <strong>NewsML</strong>. O formato permitirá:<br />
+1. Estruturação dos dados (texto, imagem, vídeo e metadados).<br />
+2. Compatibilidade com outros sistemas jornalísticos.<br />
+3. Reuso dos dados em múltiplas plataformas.  </p>
+<p><strong>Exemplo Simplificado de NewsML no Projeto:</strong>  </p>
+<div class="codehilite"><pre><span></span><code><span class="nt">&lt;newsItem&gt;</span>
+<span class="w">  </span><span class="nt">&lt;newsHeader&gt;</span>
+<span class="w">    </span><span class="nt">&lt;newsIdentifier&gt;</span>12345<span class="nt">&lt;/newsIdentifier&gt;</span>
+<span class="w">    </span><span class="nt">&lt;date&gt;</span>2024-06-16<span class="nt">&lt;/date&gt;</span>
+<span class="w">    </span><span class="nt">&lt;provider&gt;</span>Campus<span class="w"> </span>Multiplataforma<span class="nt">&lt;/provider&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/newsHeader&gt;</span>
+<span class="w">  </span><span class="nt">&lt;contentSet&gt;</span>
+<span class="w">    </span><span class="nt">&lt;text&gt;</span>Notícia<span class="w"> </span>relevante<span class="w"> </span>do<span class="w"> </span>Campus<span class="w"> </span>Multiplataforma...<span class="nt">&lt;/text&gt;</span>
+<span class="w">    </span><span class="nt">&lt;image</span><span class="w"> </span><span class="na">src=</span><span class="s">&quot;https://imgur.com/12345&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">    </span><span class="nt">&lt;video</span><span class="w"> </span><span class="na">src=</span><span class="s">&quot;https://youtube.com/video123&quot;</span><span class="w"> </span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/contentSet&gt;</span>
+<span class="nt">&lt;/newsItem&gt;</span>
+</code></pre></div>
 
+<hr />
+<h2 id="estrategias-de-monitoramento-e-manutencao"><strong>Estratégias de Monitoramento e Manutenção</strong><a class="headerlink" href="#estrategias-de-monitoramento-e-manutencao" title="Permanent link">&para;</a></h2>
+<p>Seguindo a <strong>Manutenção Centrada em Confiabilidade</strong>, o sistema implementará as seguintes estratégias:  </p>
+<ol>
+<li><strong>Monitoramento Contínuo</strong>:  </li>
+<li>Ferramentas como <strong>Firebase Performance Monitoring</strong> e <strong>Crashlytics</strong> serão usadas para rastrear problemas.  </li>
+<li>
+<p>Logs automatizados para identificar modos de falha em APIs externas.  </p>
+</li>
+<li>
+<p><strong>Redundância de Dados</strong>:  </p>
+</li>
+<li>Uso de <strong>cache local</strong> para conteúdos essenciais.  </li>
+<li>
+<p>Armazenamento de imagens críticas tanto no <strong>Imgur</strong> quanto no <strong>Firebase Storage</strong>.  </p>
+</li>
+<li>
+<p><strong>Facilidade de Atualizações</strong>:  </p>
+</li>
+<li>Atualizações <strong>OTA</strong> para o front-end.  </li>
+<li>
+<p>Deploy simplificado do backend no Firebase.  </p>
+</li>
+<li>
+<p><strong>Prevenção de Falhas Críticas</strong>:  </p>
+</li>
+<li>Implementação de <strong>timeouts</strong> e políticas de retentativa (retry policies) nas chamadas HTTP para APIs externas.  </li>
+<li>Monitoramento de <strong>limites de taxa</strong> para evitar bloqueios (rate limiting).  </li>
+</ol>
+<hr />
+<h2 id="conclusao"><strong>Conclusão</strong><a class="headerlink" href="#conclusao" title="Permanent link">&para;</a></h2>
+<p>A arquitetura proposta para o sistema <strong>Campus Multiplataforma</strong> foi desenvolvida com foco em modularidade, integração eficiente e adoção de padrões robustos como <strong>NewsML</strong>. A combinação de <strong>React Native Expo</strong>, <strong>Firebase</strong> e APIs externas garante escalabilidade, baixo custo operacional e facilidade de manutenção, alinhando-se às boas práticas de engenharia de software e </p>
 
 
 

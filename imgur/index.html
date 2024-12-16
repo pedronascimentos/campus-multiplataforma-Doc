@@ -1,0 +1,2113 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../linkedin/">
+      
+      
+        <link rel="next" href="../youtube/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.48">
+    
+    
+      
+        <title>Imgur API - Campus Multiplataforma</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.6f8fc17f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="red">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#imgur-api" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Campus Multiplataforma" class="md-header__button md-logo" aria-label="Campus Multiplataforma" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Campus Multiplataforma
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Imgur API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href=".." class="md-tabs__link">
+          
+  
+    
+  
+  Introdução
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../requisitos/" class="md-tabs__link">
+          
+  
+    
+  
+  Planejamento
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../design/" class="md-tabs__link">
+          
+  
+    
+  
+  Design do Sistema
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../guia_estilo/" class="md-tabs__link">
+          
+  
+    
+  
+  Produto
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../introducao_apis/" class="md-tabs__link">
+          
+  
+    
+  
+  Desenvolvimento
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../referencias/" class="md-tabs__link">
+          
+  
+    
+  
+  Documentação de Referência
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Campus Multiplataforma" class="md-nav__button md-logo" aria-label="Campus Multiplataforma" data-md-component="logo">
+      
+  <img src="../images/logo.png" alt="logo">
+
+    </a>
+    Campus Multiplataforma
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href=".." class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Introdução
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Introdução
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../equipe/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Equipe do Projeto
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../links_uteis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Links uteis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Planejamento
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Planejamento
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../requisitos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Análise de Requisitos
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../roadmap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Roadmap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../casos_uso/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Casos uso
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Design do Sistema
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Design do Sistema
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../design/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documento de Arquitetura
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../arquitetura/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ferramentas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../banco_dados/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documento de Banco de Dados
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Produto
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Produto
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../guia_estilo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Guia de Estilo Visual
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prototipo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Protótipo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../testes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Desenvolvimento
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Desenvolvimento
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    APIs
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            APIs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introducao_apis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introducao apis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_2" id="__nav_5_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Redes Sociais
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            Redes Sociais
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instagram/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Instagram
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tiktok/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tiktok
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../linkedin/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linkedin
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_1_3" id="__nav_5_1_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Hospedagem
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            Hospedagem
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Imgur API
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Imgur API
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introducao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introdução
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracao-inicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuração Inicial
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuração Inicial">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#criacao-de-conta-imgur" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criação de Conta Imgur
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obtencao-do-token-de-acesso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obtenção do Token de Acesso
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funcionalidades-da-imgur-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funcionalidades da Imgur API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Funcionalidades da Imgur API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#upload-de-imagens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Upload de Imagens
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Upload de Imagens">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-de-codigo-para-upload-publico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de Código para Upload Público:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-de-codigo-para-upload-privado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de Código para Upload Privado:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coleta-de-informacoes-sobre-imagens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Coleta de Informações sobre Imagens
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Coleta de Informações sobre Imagens">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-de-codigo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de Código:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compressao-e-descompressao-de-imagens-nativa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compressão e Descompressão de Imagens Nativa
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Compressão e Descompressão de Imagens Nativa">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compressao-de-imagens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compressão de Imagens
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#descompressao-de-imagens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Descompressão de Imagens
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impacto-na-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Impacto na Performance
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integracao-com-newsml" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integração com NewsML
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integração com NewsML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#formato-newsml" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formato NewsML
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Formato NewsML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-de-newsml-com-imgur" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de NewsML com Imgur:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-de-newsml-com-firebase-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de NewsML com Firebase Storage:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upload-de-arquivo-newsml" class="md-nav__link">
+    <span class="md-ellipsis">
+      Upload de Arquivo NewsML
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estimativas-de-uso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estimativas de Uso
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pros-e-contras" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prós e Contras
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prós e Contras">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pros" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prós
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contras" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contras
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../youtube/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    YouTube Data API v3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../publicacoes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publicações
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuracao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuracao
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../praticas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Praticas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Documentação de Referência
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Documentação de Referência
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../referencias/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Referencias
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introducao" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introdução
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuracao-inicial" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuração Inicial
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuração Inicial">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#criacao-de-conta-imgur" class="md-nav__link">
+    <span class="md-ellipsis">
+      Criação de Conta Imgur
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#obtencao-do-token-de-acesso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Obtenção do Token de Acesso
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funcionalidades-da-imgur-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Funcionalidades da Imgur API
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Funcionalidades da Imgur API">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#upload-de-imagens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Upload de Imagens
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Upload de Imagens">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-de-codigo-para-upload-publico" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de Código para Upload Público:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-de-codigo-para-upload-privado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de Código para Upload Privado:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coleta-de-informacoes-sobre-imagens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Coleta de Informações sobre Imagens
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Coleta de Informações sobre Imagens">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-de-codigo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de Código:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compressao-e-descompressao-de-imagens-nativa" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compressão e Descompressão de Imagens Nativa
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Compressão e Descompressão de Imagens Nativa">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compressao-de-imagens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compressão de Imagens
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#descompressao-de-imagens" class="md-nav__link">
+    <span class="md-ellipsis">
+      Descompressão de Imagens
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#impacto-na-performance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Impacto na Performance
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integracao-com-newsml" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integração com NewsML
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Integração com NewsML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#formato-newsml" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formato NewsML
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Formato NewsML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-de-newsml-com-imgur" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de NewsML com Imgur:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemplo-de-newsml-com-firebase-storage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemplo de NewsML com Firebase Storage:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upload-de-arquivo-newsml" class="md-nav__link">
+    <span class="md-ellipsis">
+      Upload de Arquivo NewsML
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estimativas-de-uso" class="md-nav__link">
+    <span class="md-ellipsis">
+      Estimativas de Uso
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pros-e-contras" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prós e Contras
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Prós e Contras">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pros" class="md-nav__link">
+    <span class="md-ellipsis">
+      Prós
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contras" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contras
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="imgur-api">Imgur API<a class="headerlink" href="#imgur-api" title="Permanent link">&para;</a></h1>
+<h2 id="introducao">Introdução<a class="headerlink" href="#introducao" title="Permanent link">&para;</a></h2>
+<p>A configuração e integração da <strong>Imgur API</strong> permite o upload de imagens e gerenciamento de galerias de forma simples e eficiente. Utilizando autenticação via <strong>OAuth 2.0</strong>, a API possibilita que os jornalistas façam o upload de imagens diretamente para o aplicativo. </p>
+<p>Essa documentação aborda a integração do <strong>Imgur API</strong> para upload de imagens, <strong>compressão/descompressão nativa</strong> de imagens no app e como integrar essas imagens em um formato <strong>NewsML</strong>, analisando também o impacto na performance.</p>
+<p>A seguir, a configuração do ambiente, as funcionalidades de upload e leitura de dados, além de estimativas do uso da API para análise de viabilidade. Para mais informações, consulte a <a href="https://apidocs.imgur.com/">documentação oficial da Imgur API</a>.</p>
+<hr />
+<h2 id="configuracao-inicial">Configuração Inicial<a class="headerlink" href="#configuracao-inicial" title="Permanent link">&para;</a></h2>
+<h3 id="criacao-de-conta-imgur"><strong>Criação de Conta Imgur</strong><a class="headerlink" href="#criacao-de-conta-imgur" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Acesse o <a href="https://imgur.com/">site do Imgur</a> e crie uma conta.</li>
+<li>Registre seu aplicativo no <a href="https://api.imgur.com/">Portal de Desenvolvedores da Imgur</a> para obter o <strong>Client ID</strong> e <strong>Client Secret</strong>.</li>
+</ol>
+<h3 id="obtencao-do-token-de-acesso"><strong>Obtenção do Token de Acesso</strong><a class="headerlink" href="#obtencao-do-token-de-acesso" title="Permanent link">&para;</a></h3>
+<p>Para autenticação via OAuth 2.0, siga o processo para obter um <strong>Access Token</strong> com permissões adequadas. Mais detalhes no <a href="https://apidocs.imgur.com/#oauth">guia de autenticação da Imgur</a>.</p>
+<hr />
+<h2 id="funcionalidades-da-imgur-api"><strong>Funcionalidades da Imgur API</strong><a class="headerlink" href="#funcionalidades-da-imgur-api" title="Permanent link">&para;</a></h2>
+<h3 id="upload-de-imagens"><strong>Upload de Imagens</strong><a class="headerlink" href="#upload-de-imagens" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Endpoint:</strong> <code>POST https://api.imgur.com/3/upload</code></li>
+<li><strong>Autenticação:</strong> Adicione o <strong>Access Token</strong> no cabeçalho da requisição.</li>
+</ul>
+<h4 id="exemplo-de-codigo-para-upload-publico">Exemplo de Código para Upload Público:<a class="headerlink" href="#exemplo-de-codigo-para-upload-publico" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">axios</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;axios&#39;</span><span class="p">;</span>
+
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">uploadImage</span><span class="p">(</span><span class="nx">imageUri</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">formData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">FormData</span><span class="p">();</span>
+<span class="w">  </span><span class="nx">formData</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">uri</span><span class="o">:</span><span class="w"> </span><span class="nx">imageUri</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;image.jpg&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;image/jpeg&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="p">});</span>
+
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">axios</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;https://api.imgur.com/3/upload&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">formData</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">Authorization</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Bearer SEU_ACCESS_TOKEN&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">  </span><span class="p">});</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">link</span><span class="p">;</span><span class="w"> </span><span class="c1">// Retorna o link público</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h4 id="exemplo-de-codigo-para-upload-privado">Exemplo de Código para Upload Privado:<a class="headerlink" href="#exemplo-de-codigo-para-upload-privado" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">uploadPrivateImage</span><span class="p">(</span><span class="nx">imageUri</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">formData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">FormData</span><span class="p">();</span>
+<span class="w">  </span><span class="nx">formData</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;image&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">uri</span><span class="o">:</span><span class="w"> </span><span class="nx">imageUri</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;image.jpg&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;image/jpeg&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="p">});</span>
+
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">axios</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;https://api.imgur.com/3/upload&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">formData</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">Authorization</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Bearer SEU_ACCESS_TOKEN&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nx">params</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">privacy</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;hidden&#39;</span><span class="p">,</span><span class="w"> </span><span class="c1">// Torna a imagem privada</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">  </span><span class="p">});</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">link</span><span class="p">;</span><span class="w"> </span><span class="c1">// Retorna o link privado</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h3 id="coleta-de-informacoes-sobre-imagens"><strong>Coleta de Informações sobre Imagens</strong><a class="headerlink" href="#coleta-de-informacoes-sobre-imagens" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Endpoint:</strong> <code>GET https://api.imgur.com/3/account/{username}/images</code></li>
+<li><strong>Autenticação:</strong> Adicione o <strong>Access Token</strong>.</li>
+</ul>
+<h4 id="exemplo-de-codigo">Exemplo de Código:<a class="headerlink" href="#exemplo-de-codigo" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">fetchUserImages</span><span class="p">(</span><span class="nx">username</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">response</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="sb">`https://api.imgur.com/3/account/</span><span class="si">${</span><span class="nx">username</span><span class="si">}</span><span class="sb">/images`</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">Authorization</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Bearer SEU_ACCESS_TOKEN&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">  </span><span class="p">});</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">response</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span><span class="w"> </span><span class="c1">// Retorna as imagens do usuário</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<hr />
+<h2 id="compressao-e-descompressao-de-imagens-nativa"><strong>Compressão e Descompressão de Imagens Nativa</strong><a class="headerlink" href="#compressao-e-descompressao-de-imagens-nativa" title="Permanent link">&para;</a></h2>
+<h3 id="compressao-de-imagens"><strong>Compressão de Imagens</strong><a class="headerlink" href="#compressao-de-imagens" title="Permanent link">&para;</a></h3>
+<p>Utilize a biblioteca <strong>react-native-image-crop-picker</strong> para comprimir as imagens diretamente no dispositivo, reduzindo seu tamanho sem perder qualidade excessiva.</p>
+<div class="codehilite"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">ImagePicker</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react-native-image-crop-picker&#39;</span><span class="p">;</span>
+
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">compressImage</span><span class="p">(</span><span class="nx">imageUri</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">compressedImage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">ImagePicker</span><span class="p">.</span><span class="nx">openCropper</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">path</span><span class="o">:</span><span class="w"> </span><span class="nx">imageUri</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">width</span><span class="o">:</span><span class="w"> </span><span class="mf">800</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">height</span><span class="o">:</span><span class="w"> </span><span class="mf">800</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">compressImageQuality</span><span class="o">:</span><span class="w"> </span><span class="mf">0.7</span><span class="p">,</span><span class="w"> </span><span class="c1">// Ajuste da compressão</span>
+<span class="w">  </span><span class="p">});</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">compressedImage</span><span class="p">.</span><span class="nx">path</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="descompressao-de-imagens"><strong>Descompressão de Imagens</strong><a class="headerlink" href="#descompressao-de-imagens" title="Permanent link">&para;</a></h3>
+<p>Para restaurar a imagem ao seu tamanho original após compressão, use <strong>react-native-image-resizer</strong>.</p>
+<div class="codehilite"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="nx">ImageResizer</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;react-native-image-resizer&#39;</span><span class="p">;</span>
+
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">decompressImage</span><span class="p">(</span><span class="nx">compressedUri</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">decompressedImage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">ImageResizer</span><span class="p">.</span><span class="nx">createResizedImage</span><span class="p">(</span>
+<span class="w">    </span><span class="nx">compressedUri</span><span class="p">,</span>
+<span class="w">    </span><span class="mf">1600</span><span class="p">,</span><span class="w"> </span><span class="c1">// Largura</span>
+<span class="w">    </span><span class="mf">1600</span><span class="p">,</span><span class="w"> </span><span class="c1">// Altura</span>
+<span class="w">    </span><span class="s1">&#39;JPEG&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="mf">100</span><span class="w">   </span><span class="c1">// Qualidade</span>
+<span class="w">  </span><span class="p">);</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">decompressedImage</span><span class="p">.</span><span class="nx">uri</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div>
+
+<h3 id="impacto-na-performance"><strong>Impacto na Performance</strong><a class="headerlink" href="#impacto-na-performance" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Compressão:</strong> A compressão de imagens no dispositivo pode aumentar o uso de CPU, especialmente em dispositivos com hardware limitado. Use técnicas assíncronas para não bloquear a interface do usuário.</li>
+<li><strong>Descompressão:</strong> Similarmente, a descompressão de imagens pode exigir recursos significativos, mas a diferença de performance será menos perceptível em imagens menores ou dispositivos mais potentes.</li>
+</ul>
+<p>Recomenda-se medir o tempo de processamento para garantir que a compressão/descompressão não afete negativamente a experiência do usuário.</p>
+<hr />
+<h2 id="integracao-com-newsml"><strong>Integração com NewsML</strong><a class="headerlink" href="#integracao-com-newsml" title="Permanent link">&para;</a></h2>
+<h3 id="formato-newsml"><strong>Formato NewsML</strong><a class="headerlink" href="#formato-newsml" title="Permanent link">&para;</a></h3>
+<p>O NewsML é um formato padrão para armazenamento e troca de notícias, utilizado por diversas organizações de mídia. A seguir, mostramos como integrar as imagens enviadas para o Imgur ou Firebase no formato NewsML.</p>
+<h4 id="exemplo-de-newsml-com-imgur">Exemplo de NewsML com Imgur:<a class="headerlink" href="#exemplo-de-newsml-com-imgur" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code><span class="nt">&lt;NewsItem&gt;</span>
+<span class="w">  </span><span class="nt">&lt;Identification&gt;</span>
+<span class="w">    </span><span class="nt">&lt;NewsIdentifier&gt;</span>unique-news-id<span class="nt">&lt;/NewsIdentifier&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/Identification&gt;</span>
+<span class="w">  </span><span class="nt">&lt;NewsComponent&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Headline&gt;</span>Título<span class="w"> </span>da<span class="w"> </span>Notícia<span class="nt">&lt;/Headline&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Text&gt;</span>
+<span class="w">      </span><span class="nt">&lt;Paragraph&gt;</span>Este<span class="w"> </span>é<span class="w"> </span>o<span class="w"> </span>conteúdo<span class="w"> </span>da<span class="w"> </span>notícia.<span class="nt">&lt;/Paragraph&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/Text&gt;</span>
+<span class="w">    </span><span class="nt">&lt;ContentItem</span><span class="w"> </span><span class="na">MediaType=</span><span class="s">&quot;image&quot;</span><span class="w"> </span><span class="na">Source=</span><span class="s">&quot;https://i.imgur.com/imagem.jpg&quot;</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/NewsComponent&gt;</span>
+<span class="nt">&lt;/NewsItem&gt;</span>
+</code></pre></div>
+
+<h4 id="exemplo-de-newsml-com-firebase-storage">Exemplo de NewsML com Firebase Storage:<a class="headerlink" href="#exemplo-de-newsml-com-firebase-storage" title="Permanent link">&para;</a></h4>
+<div class="codehilite"><pre><span></span><code><span class="nt">&lt;NewsItem&gt;</span>
+<span class="w">  </span><span class="nt">&lt;Identification&gt;</span>
+<span class="w">    </span><span class="nt">&lt;NewsIdentifier&gt;</span>unique-news-id<span class="nt">&lt;/NewsIdentifier&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/Identification&gt;</span>
+<span class="w">  </span><span class="nt">&lt;NewsComponent&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Headline&gt;</span>Título<span class="w"> </span>da<span class="w"> </span>Notícia<span class="nt">&lt;/Headline&gt;</span>
+<span class="w">    </span><span class="nt">&lt;Text&gt;</span>
+<span class="w">      </span><span class="nt">&lt;Paragraph&gt;</span>Este<span class="w"> </span>é<span class="w"> </span>o<span class="w"> </span>conteúdo<span class="w"> </span>da<span class="w"> </span>notícia.<span class="nt">&lt;/Paragraph&gt;</span>
+<span class="w">    </span><span class="nt">&lt;/Text&gt;</span>
+<span class="w">    </span><span class="nt">&lt;ContentItem</span><span class="w"> </span><span class="na">MediaType=</span><span class="s">&quot;image&quot;</span><span class="w"> </span><span class="na">Source=</span><span class="s">&quot;https://firebasestorage.googleapis.com/v0/b/seu-app.appspot.com/o/imagem.jpg?alt=media&quot;</span><span class="nt">/&gt;</span>
+<span class="w">  </span><span class="nt">&lt;/NewsComponent&gt;</span>
+<span class="nt">&lt;/NewsItem&gt;</span>
+</code></pre></div>
+
+<h3 id="upload-de-arquivo-newsml"><strong>Upload de Arquivo NewsML</strong><a class="headerlink" href="#upload-de-arquivo-newsml" title="Permanent link">&para;</a></h3>
+<p>Você pode usar <strong>Firebase Storage</strong> ou qualquer outro serviço para armazenar e enviar arquivos <strong>NewsML</strong>.</p>
+<hr />
+<h2 id="estimativas-de-uso"><strong>Estimativas de Uso</strong><a class="headerlink" href="#estimativas-de-uso" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Cotas Gratuitas Imgur:</strong></li>
+<li><strong>50 uploads diários</strong>.</li>
+<li>
+<p><strong>Limite de Tamanho:</strong> 10 MB por imagem.</p>
+</li>
+<li>
+<p><strong>Cotas Gratuitas Firebase:</strong></p>
+</li>
+<li><strong>5 GB de armazenamento</strong> e <strong>1 GB de download mensal gratuito</strong>.</li>
+<li>Após ultrapassar esses limites, você será cobrado de acordo com os preços do Firebase.</li>
+</ul>
+<hr />
+<h2 id="pros-e-contras">Prós e Contras<a class="headerlink" href="#pros-e-contras" title="Permanent link">&para;</a></h2>
+<h3 id="pros">Prós<a class="headerlink" href="#pros" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Imgur:</strong> Simples de usar, permite tanto uploads públicos quanto privados, e oferece uma boa quantidade de uploads diários gratuitamente.<ul>
+<li><strong>Gratuito:</strong> O Imgur fornece armazenamento de imagens sem custo adicional.</li>
+<li><strong>Simplicidade:</strong> API fácil de integrar e bem documentada.</li>
+<li><strong>Escalabilidade:</strong> Suporte a grandes volumes de imagens.</li>
+</ul>
+</li>
+<li><strong>Firebase:</strong> Excelente para armazenamento escalável e fácil integração com outras funcionalidades do Firebase.</li>
+</ul>
+<h3 id="contras">Contras<a class="headerlink" href="#contras" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Imgur:</strong> Limitação de 50 uploads diários e tamanho de 10 MB por imagem.<ul>
+<li><strong>Limitação de Cota:</strong> A cota gratuita pode ser limitada.</li>
+<li><strong>Privacidade Limitada:</strong> Dependência das configurações de privacidade do Imgur.</li>
+</ul>
+</li>
+<li><strong>Firebase:</strong> Pode ser caro para grandes volumes de armazenamento ou downloads frequentes.</li>
+</ul>
+<hr />
+<p>Para mais informações, consulte a <a href="https://apidocs.imgur.com/">documentação oficial da Imgur API</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs", "navigation.indexes"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
